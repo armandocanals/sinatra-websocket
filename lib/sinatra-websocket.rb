@@ -120,7 +120,7 @@ module SinatraWebsocket
         # The whole header has not been received yet.
         return false
       end
-      @handler.run
+      Thread.new { @handler.run }
       return true
     end
   end
